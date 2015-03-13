@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Events</title>
+    <meta http-equiv="expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/headerfooter.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <!-- Theme -->
+<!--<style type="text/css"> 
+ 
+/* AddThisEvent (add to your existing CSS) */
+.addthisevent-drop 						{width:280px;display:inline-block;position:relative;z-index:999998;cursor:pointer;background:#f7f7f7;font-family:"Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;color:#333!important;font-size:15px;border:1px solid #cfcfcf;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.15);-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.15);box-shadow:1px 1px 3px rgba(0,0,0,0.15);-webkit-border-radius:2px;border-radius:2px;}
+.addthisevent-drop:hover 				{background-color:#f4f4f4;}
+.addthisevent-drop:active 				{top:1px;}
+.addthisevent-drop .date 				{width:60px;height:60px;float:left;position:relative;}
+.addthisevent-drop .date .mon 			{display:block;text-align:center;padding:9px 0px 0px 0px;font-size:11px;color:#bf5549;font-weight:bold;line-height:110%;text-transform:uppercase;}
+.addthisevent-drop .date .day 			{display:block;text-align:center;padding:0px 0px 8px 0px;font-size:30px;font-weight:bold;color:#333;line-height:100%;}
+.addthisevent-drop .date .bdr1 			{width:1px;height:50px;background:#eaeaea;position:absolute;z-index:100;top:5px;right:-3px;}
+.addthisevent-drop .date .bdr2 			{width:1px;height:50px;background:#fff;position:absolute;z-index:100;top:5px;right:-4px;}
+.addthisevent-drop .desc 				{width:210px;height:60px;float:left;position:relative;}
+.addthisevent-drop .desc p 				{margin:0;display:block;text-align:left;padding:7px 0px 0px 18px;font-size:12px;color:#666;line-height:110%;}
+.addthisevent-drop .desc .hed 			{height:15px;display:block;overflow:hidden;margin-bottom:3px;font-size:14px;line-height:110%;color:#333;text-transform:uppercase;}
+.addthisevent-drop .desc .des 			{height:28px;display:block;overflow:hidden;}
+.addthisevent-selected 					{background-color:#f4f4f4;}
+.addthisevent_dropdown 					{width:280px;position:absolute;z-index:99999;padding:6px 0px 0px 0px;background:#fff;text-align:left;display:none;margin-top:-2px;margin-left:-1px;border:1px solid #cfcfcf;-webkit-box-shadow:1px 3px 6px rgba(0,0,0,0.15);-moz-box-shadow:1px 3px 6px rgba(0,0,0,0.15);box-shadow:1px 3px 6px rgba(0,0,0,0.15);}
+.addthisevent_dropdown span 			{display:block;line-height:110%;background:#fff;text-decoration:none;font-size:14px;color:#6d84b4;padding:8px 10px 9px 15px;}
+.addthisevent_dropdown span:hover 		{background:#f4f4f4;color:#6d84b4;text-decoration:none;font-size:14px;}
+.addthisevent span 						{display:none!important;}
+.addthisevent-drop ._url,.addthisevent-drop ._start,.addthisevent-drop ._end,.addthisevent-drop ._summary,.addthisevent-drop ._description,.addthisevent-drop ._location,.addthisevent-drop ._organizer,.addthisevent-drop ._organizer_email,.addthisevent-drop ._facebook_event,.addthisevent-drop ._all_day_event {display:none!important;}
+.addthisevent_dropdown .copyx 			{height:21px;display:block;position:relative;cursor:default;}
+.addthisevent_dropdown .brx 			{width:180px;height:1px;overflow:hidden;background:#e0e0e0;position:absolute;z-index:100;left:10px;top:9px;}
+.addthisevent_dropdown .frs 			{position:absolute;top:3px;cursor:pointer;right:10px;padding-left:10px;font-style:normal;font-weight:normal;text-align:right;z-index:101;line-height:110%;background:#fff;text-decoration:none;font-size:10px;color:#cacaca;}
+.addthisevent_dropdown .frs:hover 		{color:#6d84b4;}
+.addthisevent 							{visibility:hidden;}
+ 
+</style>-->
+
+
+</head>
+
+<body>
+
+<div data-role="page" id="events-Page">
+
+    <div data-role="header" data-theme="b" data-position="fixed" style="padding-top: 20px;">
+          <a href="index.html" class="ui-btn-left" data-icon="home" data-iconpos="notext" 
+               data-direction="reverse">Home</a> 
+          <a href="about.html" class="ui-btn-right" data-icon="info" data-iconpos="notext" >About</a> 
+          <center><font size="2px">Team Events</font></center>
+    </div><!-- /header -->
+
+    <div data-role="content">
+       <div data-role="collapsibleset" data-theme="b" data-content-theme="a" data-iconpos="left" id="set">
+
+        <div data-role="collapsible" data-mini="true" data-collapsed="false">
+            <h4>Event #1</h4><P><img src="img/event.png" alt="event" />Details: <B>KITS Dev Team get together and team lunch </B> <br />
+            Date:  23-Mar-2015 <br />
+            Venue: Barbeque Nation, Salt Lake. <br /> <br />
+                
+             <a href="http://example.com/link-to-your-event" title="Add to Calendar" class="addthisevent">
+                Add to Calendar
+                <span class="_start">23-03-2015 18:00:00</span>
+                <span class="_end">23-03-2015 20:00:00</span>
+                <span class="_zonecode">68</span>
+                <span class="_summary">Summary of the event</span>
+                <span class="_description">Description of the event</span>
+                <span class="_location">Location of the event</span>
+                <span class="_organizer">Organizer</span>
+                <span class="_organizer_email">Organizer e-mail</span>
+                <span class="_facebook_event">http://www.facebook.com/events/160427380695693</span>
+                <span class="_all_day_event">true</span>
+                <span class="_date_format">DD/MM/YYYY</span>
+            </a>
+                </p> <br /> <br /><br />
+
+        </div>
+
+        <div data-role="collapsible" data-mini="true" data-collapsed="true"><h4>Event #2</h4><p><img src="img/event.png" alt="event" /> &nbsp; <B>Details: ePOS Team outing  </B> <br />Date:  10-May-2015 <br />
+            Venue: City center II <br /><br /></p><a href="http://example.com/link-to-your-event" title="Add to Calendar" class="addthisevent">
+                Add to Calendar
+                <span class="_start">10-05-2015 11:38:46</span>
+                <span class="_end">11-05-2015 11:38:46</span>
+                <span class="_zonecode">68</span>
+                <span class="_summary">Summary of the event</span>
+                <span class="_description">Description of the event</span>
+                <span class="_location">Location of the event</span>
+                <span class="_organizer">Organizer</span>
+                <span class="_organizer_email">Organizer e-mail</span>
+                <span class="_facebook_event">http://www.facebook.com/events/160427380695693</span>
+                <span class="_all_day_event">true</span>
+                <span class="_date_format">DD/MM/YYYY</span>
+            </a> <br /> <br /><br />
+        </div>
+      </div>
+
+    </div>
+
+   <div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+
+
+</div> 
+ 
+    
+
+    
+<!-- AddThisEvent -->
+<script type="text/javascript" src="https://addthisevent.com/libs/1.5.8/ate.min.js"></script>
+    <script type="text/javascript">
+        addthisevent.settings({
+            license: "aao8iuet5zp9iqw5sm9z",
+            mouse: false,
+            css: true,
+            outlook: { show: false, text: "Outlook Calendar" },
+            google: { show: true, text: "Google Calendar" },
+            yahoo: { show: false, text: "Yahoo Calendar" },
+            hotmail: { show: false, text: "Hotmail Calendar" },
+            ical: { show: true, text: "iCal Calendar" },
+            facebook: { show: true, text: "Facebook Event" },
+            //dropdown: { order: "outlook,google,ical" },
+            callback: ""
+        });
+</script>
+</body>
+</html>

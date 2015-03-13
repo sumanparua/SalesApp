@@ -1,0 +1,9 @@
+.NET/SQL, 14.75
+SAP/ABAP, 36.89
+WMB/BODS, 12.30
+MS BI, 4.92
+Server Admin, 2.46
+JAVA/J2EE, 9.84
+Oracle PL/SQL, 6.56
+Siebel CRM, 8.20
+Red Prairie, 4.10

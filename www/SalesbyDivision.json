@@ -1,0 +1,498 @@
+[
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "Division":"10 North Division",
+    "sales":2352100.92,
+    "Margin":686228.33
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "Division":"20 Central Division",
+    "sales":2979401.35,
+    "Margin":858055.05
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "Division":"30 South West Division",
+    "sales":2543165,
+    "Margin":760739.95
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "Division":"40 South East Division",
+    "sales":2538047.35,
+    "Margin":787141.79
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "Division":"50 Ireland Division",
+    "sales":314162.22,
+    "Margin":108532.73
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "Division":"75 Multichannel",
+    "sales":321834.2,
+    "Margin":72165.2
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "Division":"80 ZZZ",
+    "sales":-783.23,
+    "Margin":-663.42
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "Division":"10 North Division",
+    "sales":2231185.39,
+    "Margin":1128523.95
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "Division":"20 Central Division",
+    "sales":2728937.03,
+    "Margin":1364129.9
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "Division":"30 South West Division",
+    "sales":2257856.42,
+    "Margin":1138501.15
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "Division":"40 South East Division",
+    "sales":2563825.66,
+    "Margin":1332381.93
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "Division":"50 Ireland Division",
+    "sales":445228.15,
+    "Margin":221505.2
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "Division":"75 Multichannel",
+    "sales":48027.35,
+    "Margin":17978.31
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "Division":"80 ZZZ",
+    "sales":-12.48,
+    "Margin":-7.66
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "Division":"10 North Division",
+    "sales":1804830.62,
+    "Margin":758490.49
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "Division":"20 Central Division",
+    "sales":2323894.89,
+    "Margin":993415.76
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "Division":"30 South West Division",
+    "sales":1746862.41,
+    "Margin":761309.25
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "Division":"40 South East Division",
+    "sales":2012602.45,
+    "Margin":871595.68
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "Division":"50 Ireland Division",
+    "sales":304042.64,
+    "Margin":137317.35
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "Division":"75 Multichannel",
+    "sales":196770.96,
+    "Margin":79106.9
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "Division":"80 ZZZ",
+    "sales":-6535.45,
+    "Margin":-4865.11
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "Division":"10 North Division",
+    "sales":711203.27,
+    "Margin":274345.3
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "Division":"20 Central Division",
+    "sales":920586.3,
+    "Margin":361363.57
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "Division":"30 South West Division",
+    "sales":771692.98,
+    "Margin":308467.22
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "Division":"40 South East Division",
+    "sales":795320.45,
+    "Margin":337941.94
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "Division":"50 Ireland Division",
+    "sales":128795.53,
+    "Margin":50871.3
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "Division":"75 Multichannel",
+    "sales":109900.74,
+    "Margin":34685.49
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "Division":"80 ZZZ",
+    "sales":-2455.84,
+    "Margin":-2266.88
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "Division":"10 North Division",
+    "sales":1109036.91,
+    "Margin":485009.21
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "Division":"20 Central Division",
+    "sales":1402144.42,
+    "Margin":616026.93
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "Division":"30 South West Division",
+    "sales":1053516.87,
+    "Margin":466375.1
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "Division":"40 South East Division",
+    "sales":1364323.74,
+    "Margin":606021.6
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "Division":"50 Ireland Division",
+    "sales":190769.45,
+    "Margin":86392.58
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "Division":"75 Multichannel",
+    "sales":81806.74,
+    "Margin":29617.7
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "Division":"80 ZZZ",
+    "sales":-1006.64,
+    "Margin":-1024.69
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "Division":"10 North Division",
+    "sales":3072485.22,
+    "Margin":1282689.4
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "Division":"20 Central Division",
+    "sales":3623093.55,
+    "Margin":1530807.27
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "Division":"30 South West Division",
+    "sales":3072891.3,
+    "Margin":1319722.31
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "Division":"40 South East Division",
+    "sales":3417523.8,
+    "Margin":1487768.24
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "Division":"50 Ireland Division",
+    "sales":507988.12,
+    "Margin":192739.86
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "Division":"75 Multichannel",
+    "sales":65984.17,
+    "Margin":22208.95
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "Division":"80 ZZZ",
+    "sales":0,
+    "Margin":0
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "Division":"10 North Division",
+    "sales":1532480.11,
+    "Margin":796703.02
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "Division":"20 Central Division",
+    "sales":1711841.14,
+    "Margin":893997.1
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "Division":"30 South West Division",
+    "sales":1302787.31,
+    "Margin":683791.73
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "Division":"40 South East Division",
+    "sales":1462605.84,
+    "Margin":800837.46
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "Division":"50 Ireland Division",
+    "sales":276266.37,
+    "Margin":148786.51
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "Division":"75 Multichannel",
+    "sales":51611.46,
+    "Margin":26665.06
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "Division":"80 ZZZ",
+    "sales":-43.73,
+    "Margin":-15.79
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "Division":"10 North Division",
+    "sales":1453963.94,
+    "Margin":484097.1
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "Division":"20 Central Division",
+    "sales":2274096.92,
+    "Margin":757465.58
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "Division":"30 South West Division",
+    "sales":2115554.58,
+    "Margin":721243.89
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "Division":"40 South East Division",
+    "sales":2173617.34,
+    "Margin":791962.54
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "Division":"50 Ireland Division",
+    "sales":358091.09,
+    "Margin":126857.98
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "Division":"75 Multichannel",
+    "sales":162752.82,
+    "Margin":27315.62
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "Division":"10 North Division",
+    "sales":209201.77,
+    "Margin":92706.58
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "Division":"20 Central Division",
+    "sales":311534.58,
+    "Margin":133954.17
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "Division":"30 South West Division",
+    "sales":173188.53,
+    "Margin":75496.38
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "Division":"40 South East Division",
+    "sales":178701.55,
+    "Margin":53111.35
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "Division":"50 Ireland Division",
+    "sales":18779.59,
+    "Margin":9702.94
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "Division":"75 Multichannel",
+    "sales":25771.21,
+    "Margin":9821.03
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "Division":"80 ZZZ",
+    "sales":206.81,
+    "Margin":-31.37
+  }
+]

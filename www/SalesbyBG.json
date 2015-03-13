@@ -1,0 +1,578 @@
+[
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":10,
+    "BuyGrpDesc":"External Construction",
+    "sales":1934911.83,
+    "Margin":472392.61
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":11,
+    "BuyGrpDesc":"Internal Construction",
+    "sales":2016128.09,
+    "Margin":376923.3
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":12,
+    "BuyGrpDesc":"Paving",
+    "sales":291576.13,
+    "Margin":52846.64
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":13,
+    "BuyGrpDesc":"Timber",
+    "sales":2034279.29,
+    "Margin":596244.49
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":14,
+    "BuyGrpDesc":"Door & Window",
+    "sales":1037284.39,
+    "Margin":173568.86
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":15,
+    "BuyGrpDesc":"Decorative Joinery",
+    "sales":1368938.98,
+    "Margin":681378.9
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":16,
+    "BuyGrpDesc":"Decking",
+    "sales":257352.09,
+    "Margin":2618.25
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":17,
+    "BuyGrpDesc":"Core Plumbing",
+    "sales":1186994.11,
+    "Margin":628489.89
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":18,
+    "BuyGrpDesc":"Radiators & Central Heating",
+    "sales":558294.19,
+    "Margin":201894.87
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"201 Heavyside Building",
+    "BuyGrp":19,
+    "BuyGrpDesc":"Fires",
+    "sales":362168.71,
+    "Margin":85841.82
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":20,
+    "BuyGrpDesc":"Core Electrical",
+    "sales":1525488.64,
+    "Margin":809178.5
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":21,
+    "BuyGrpDesc":"Home Electrical",
+    "sales":622881.18,
+    "Margin":305496
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":22,
+    "BuyGrpDesc":"NBS & Fixings",
+    "sales":877711.59,
+    "Margin":651116.61
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":23,
+    "BuyGrpDesc":"Handles & Locks",
+    "sales":1158660.98,
+    "Margin":720146.47
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":24,
+    "BuyGrpDesc":"Home Hardware",
+    "sales":980343.86,
+    "Margin":739267.63
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":25,
+    "BuyGrpDesc":"Safety",
+    "sales":178744.46,
+    "Margin":69925.29
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":26,
+    "BuyGrpDesc":"Power Tools & PTA",
+    "sales":2424024.95,
+    "Margin":684479.58
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":27,
+    "BuyGrpDesc":"Power Decorating",
+    "sales":75333.76,
+    "Margin":21003.75
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":28,
+    "BuyGrpDesc":"Hand Tools",
+    "sales":1602530.23,
+    "Margin":908482.03
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"202 Lightside Building",
+    "BuyGrp":29,
+    "BuyGrpDesc":"Workwear Storage & Motoring",
+    "sales":829327.87,
+    "Margin":293916.92
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "BuyGrp":30,
+    "BuyGrpDesc":"Cabinetry",
+    "sales":3474770.81,
+    "Margin":1687908.59
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "BuyGrp":31,
+    "BuyGrpDesc":"Worktops sinks and taps",
+    "sales":1769889.45,
+    "Margin":856373.7
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "BuyGrp":32,
+    "BuyGrpDesc":"Appliances",
+    "sales":1208991.07,
+    "Margin":215396.16
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "BuyGrp":33,
+    "BuyGrpDesc":"Kitchen Accessories",
+    "sales":628190.93,
+    "Margin":310631.49
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "BuyGrp":36,
+    "BuyGrpDesc":"Bedrooms",
+    "sales":490672.26,
+    "Margin":153360.83
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"203 Kitchens & Bedrooms",
+    "BuyGrp":37,
+    "BuyGrpDesc":"Shelving & Storage",
+    "sales":809954,
+    "Margin":372699.55
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "BuyGrp":40,
+    "BuyGrpDesc":"Baths Suites & Taps",
+    "sales":1187963.29,
+    "Margin":414403.79
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "BuyGrp":41,
+    "BuyGrpDesc":"Showering",
+    "sales":1136640.05,
+    "Margin":425708.12
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "BuyGrp":42,
+    "BuyGrpDesc":"Bath Furniture & Cabinets",
+    "sales":178469.25,
+    "Margin":37514.06
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"204 Bathrooms",
+    "BuyGrp":43,
+    "BuyGrpDesc":"Bathroom Accessories",
+    "sales":931970.84,
+    "Margin":487781.97
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "BuyGrp":50,
+    "BuyGrpDesc":"Hardside Flooring",
+    "sales":2255496.84,
+    "Margin":849588.72
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "BuyGrp":51,
+    "BuyGrpDesc":"Softside Flooring",
+    "sales":678423.57,
+    "Margin":299042.79
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "BuyGrp":54,
+    "BuyGrpDesc":"Tiling",
+    "sales":1307759.9,
+    "Margin":534592.79
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"205 Flooring & Tiling",
+    "BuyGrp":55,
+    "BuyGrpDesc":"Adhesives & Tools",
+    "sales":958911.18,
+    "Margin":605194.13
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "BuyGrp":60,
+    "BuyGrpDesc":"Branded Paint",
+    "sales":5290176.6,
+    "Margin":1385237.57
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "BuyGrp":61,
+    "BuyGrpDesc":"Own Brand Exclusives & Specialists",
+    "sales":1852827.23,
+    "Margin":793094.37
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "BuyGrp":62,
+    "BuyGrpDesc":"Trade Paint",
+    "sales":554649.55,
+    "Margin":156090.15
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "BuyGrp":65,
+    "BuyGrpDesc":"Exterior Paint",
+    "sales":1415821.72,
+    "Margin":694376.02
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "BuyGrp":66,
+    "BuyGrpDesc":"Household",
+    "sales":718969.76,
+    "Margin":225557.57
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "BuyGrp":67,
+    "BuyGrpDesc":"Dec Tools & Sundries",
+    "sales":3002085.09,
+    "Margin":2033389.65
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"206 Paint",
+    "BuyGrp":68,
+    "BuyGrpDesc":"Sealants & Adhesives",
+    "sales":925436.21,
+    "Margin":548190.7
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":70,
+    "BuyGrpDesc":"Wallpaper & Coving",
+    "sales":1581559.92,
+    "Margin":818583.79
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":72,
+    "BuyGrpDesc":"Soft Décor",
+    "sales":632465.35,
+    "Margin":289547.84
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":73,
+    "BuyGrpDesc":"Kids Décor",
+    "sales":70865.72,
+    "Margin":30752.04
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":74,
+    "BuyGrpDesc":"Home Accessories",
+    "sales":854422.36,
+    "Margin":502811.53
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":75,
+    "BuyGrpDesc":"Dec Lighting",
+    "sales":1127364.51,
+    "Margin":563233.73
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":76,
+    "BuyGrpDesc":"Tech Lighting",
+    "sales":388477.9,
+    "Margin":201221.47
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":77,
+    "BuyGrpDesc":"Outdoor Lighting",
+    "sales":347092.83,
+    "Margin":161692.95
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"207 Home",
+    "BuyGrp":78,
+    "BuyGrpDesc":"Lightbulbs",
+    "sales":1335299.91,
+    "Margin":782921.74
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":80,
+    "BuyGrpDesc":"Garden Buildings &Fencing",
+    "sales":1521890.24,
+    "Margin":519561.44
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":81,
+    "BuyGrpDesc":"Outdoor Power",
+    "sales":1645752.31,
+    "Margin":191786.41
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":82,
+    "BuyGrpDesc":"Garden Tools",
+    "sales":558090.4,
+    "Margin":278780.66
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":83,
+    "BuyGrpDesc":"Garden Sundries",
+    "sales":164451.65,
+    "Margin":99405.87
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":84,
+    "BuyGrpDesc":"Garden Care",
+    "sales":1460316.98,
+    "Margin":595573.87
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":85,
+    "BuyGrpDesc":"Watering",
+    "sales":383696.17,
+    "Margin":182568.39
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":86,
+    "BuyGrpDesc":"Bedding",
+    "sales":1064377.67,
+    "Margin":229646.1
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":87,
+    "BuyGrpDesc":"Nursery",
+    "sales":870498.42,
+    "Margin":437571.88
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":88,
+    "BuyGrpDesc":"Birdcare",
+    "sales":109174.14,
+    "Margin":50547.07
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":89,
+    "BuyGrpDesc":"Leisure & BBQs",
+    "sales":422163.93,
+    "Margin":159509.32
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"208 Garden",
+    "BuyGrp":90,
+    "BuyGrpDesc":"Xmas & Garden Décor",
+    "sales":337664.78,
+    "Margin":163991.7
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "BuyGrp":95,
+    "BuyGrpDesc":"Installations",
+    "sales":867157.58,
+    "Margin":330773.36
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "BuyGrp":96,
+    "BuyGrpDesc":"Delivery Charges",
+    "sales":77418.72,
+    "Margin":73072.85
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "BuyGrp":97,
+    "BuyGrpDesc":"Alt VAT",
+    "sales":10.42,
+    "Margin":-53.86
+  },
+  {
+    "BQYEAR":2015,
+    "BQWEEK":5,
+    "Category":"209 Other",
+    "BuyGrp":98,
+    "BuyGrpDesc":"Misc Catalogue",
+    "sales":-27202.68,
+    "Margin":-29031.27
+  }
+]

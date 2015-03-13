@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
+  <title>Chart - SJ Ratio</title>       
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/headerfooter.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />    
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxchart.core.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+    
+    
+</head>
+<body class='default'>    
+ <div data-role="page" id="page" data-add-back-btn="true">
+  
+ <div data-role="header" data-theme="b"><a href="#" data-rel="back" data-role="button" >Back</a>
+         <H6><font size="2px">Senior Junior Ratio</font></H6>
+    </div>
+    
+  <div role="main" class="ui-content">
+      <div id="jqxGrid"></div>
+
+	<div id='jqxChart' style="margin-top: 20px; width: 320px; height: 250px; position: relative; left: 0px; top: 0px;">
+    </div>
+    
+<div style='margin-top: 10px;'>
+                <input style='float: left;' id="jpegButton" type="button" value="Save As JPEG" />
+                <input style='float: left; margin-left: 5px;' id="pngButton" type="button" value="Save As PNG" />
+            </div>
+      
+  </div>
+
+ <div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+
+</div>
+ 
+    <script>
+        $(document).ready(function () {
+            
+            function getExportServer() {
+                return 'http://www.jqwidgets.com/export_server/export.php';
+            }
+            // prepare chart data as an array
+            var sampleData = [
+                    { Team: 'Agile', Senior: 9, Junior: 3},
+                    { Team: 'Integration', Senior: 12, Junior: 13 },
+                    { Team: 'Darwin', Senior: 23, Junior: 91 },                    
+                    { Team: 'AMS CE', Senior: 9, Junior: 55 },
+                    { Team: 'AMS UK', Senior: 13, Junior: 42 }
+                    
+            ];
+
+            // prepare jqxChart settings
+            var settings = {
+                title: "Senior-Junior Ratio",
+                description: "Team-wise comparison by seniority",
+                enableAnimations: true,
+                showLegend: true,
+                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+                titlePadding: { left: 20, top: 0, right: 0, bottom: 10 },
+                source: sampleData,
+                xAxis:
+                    {
+                        dataField: 'Team',
+                        gridLines: { visible: true }
+                    },
+                colorScheme: 'scheme05',
+                seriesGroups:
+                    [
+                        {
+                            type: 'column',
+                            columnsGapPercent: 50,
+                            seriesGapPercent: 0,
+                            valueAxis:
+                            {
+                                visible: true,
+                                unitInterval: 10,
+                                minValue: 0,
+                                maxValue: 100,                                
+                                title: { text: 'Count of associates' }
+                            },
+                            series: [
+                                    { dataField: 'Senior', displayText: 'Senior',  labels: {
+                                            visible: true,
+                                            verticalAlignment: 'top',
+                                            offset: { x: 0, y: -15 }
+                                      } },
+                                    { dataField: 'Junior', displayText: 'Junior', labels: {
+                                            visible: true,
+                                            verticalAlignment: 'top',
+                                            offset: { x: 0, y: -15 }
+                                      } }
+                            ]
+                        }
+                    ]
+            };
+
+            // setup the chart
+            $('#jqxChart').jqxChart(settings);
+
+            
+             $("#jpegButton").jqxButton({
+                 theme: 'energyblue'
+            });
+              $("#pngButton").jqxButton({
+                  theme: 'energyblue'
+              });
+
+            $("#jpegButton").click(function () {
+                // call the export server to create a JPEG image
+                $('#jqxChart').jqxChart('saveAsJPEG', 'myChart.jpeg', getExportServer());
+            });
+            $("#pngButton").click(function () {
+                // call the export server to create a PNG image
+                $('#jqxChart').jqxChart('saveAsPNG', 'myChart.png', getExportServer());
+            });
+            
+            var adapter = new $.jqx.dataAdapter({
+                datafields: [
+                    { name: "Team", type: "string" },
+                    { name: "Senior", type: "number" },
+                    { name: "Junior", type: "number" }
+                ],
+                localdata: sampleData,
+                datatype: 'array'
+            });
+
+            $("#jqxGrid").jqxGrid({
+                width: 320,
+                height: 180,
+                filterable: true,
+                showfilterrow: true,
+                source: adapter,
+                columns:
+                [
+                    { text: "Team", width: '40%', datafield: "Team", filtertype: "checkedlist" },
+                    { text: "Senior", width: '20%', datafield: "Senior" },
+                    { text: "Junior", width: '20%', datafield: "Junior" }
+                ]
+            });
+            $("#jqxGrid").on('filter', function () {
+                var rows = $("#jqxGrid").jqxGrid('getrows');
+                var chart = $('#jqxChart').jqxChart('getInstance');               
+                
+                chart.source = rows;
+                chart.update();
+            });
+        });
+
+    </script>
+</body>
+</html>

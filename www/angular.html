@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="expires" content="0">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=2, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <title>KITSApp demo</title>       
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>    
+<style>
+    
+.loading { border:1px solid #ddd; padding:20px; margin:40px 5px; width:80px;}
+
+ .ui-page .ui-header {        
+        background: #FFB338 !important;
+        color: #694408 !important;
+    }
+table, th , td  
+{
+  font-size: smaller;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 2px;
+}
+th
+{
+    background-color: #CCCCCC;    
+   }
+
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+    
+    
+
+</head>
+<body>
+ 
+<div data-role="page" id="page2" data-add-back-btn="true">
+  <div data-role="header" data-theme="b" data-position="fixed" style="padding-top: 20px;">
+      <a href="index.html" class="ui-btn-left" data-icon="home" data-iconpos="notext" 
+           data-direction="reverse">Home</a>  
+      <a href="about.html" class="ui-btn-right" data-icon="info" data-iconpos="notext" >About</a> 
+      <center>Resources</center>
+  </div><!-- /header -->
+    
+  <div role="main" class="ui-content">
+     <!-- ng-controller="customersController" data-ng-init="init()"-->
+    <div ng-app="" > 
+    Search: (Type atleast 3 characters) <input ng-model="query">
+          Sort by:
+          <select ng-model="orderProp">
+            <option value="Name">Name</option>
+            <option value="EmpID">Employee ID</option>
+          </select>
+          <loading></loading>
+    <table >
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Mobile</th>        
+        <th>Call</th>
+        <th>SMS</th>
+    
+      <tr ng-repeat="x in names | filter:query | filter:setFilter | orderBy:orderProp" >         
+        <td> {{x.EmpID}} </td>
+        <td> {{x.Name}} </td>
+        <td>  {{x.Mobile}}</td>            
+        <td><center><a href="tel:+91{{x.Mobile}}"><img src="img/phone.png" alt="Call" height="16" width="16"></a></center></td>
+        <td><center><a href="sms:91{{x.Mobile}}"><img src="img/sms.png" alt="SMS" height="16" width="16"></a></center></td>
+      </tr>
+    </table>
+ 
+    </div>
+      </div>
+
+      
+<div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+
+      </div>
+<script>
+
+  //angular.module('myApp', [])
+  //.directive('loading', function() {
+  //    return {
+  //        restrict: 'E',
+  //        replace: true,
+  //        template: '<div class="loading"><img src="img/loading.gif" />LOADING...</div>',
+  //        link: function(scope, element, attr) {
+  //            scope.$watch('loading', function(val) {
+  //                if (val)
+  //                    $(element).show();
+  //                else
+  //                    $(element).hide();
+  //            });
+  //        }
+  //    }
+  //})
+
+//  function customersController($scope, $http) {
+//      $scope.loading = true;
+//    $http.get("https://api.myjson.com/bins/qlxn") 
+//  .success(function(response) {$scope.names = response;});
+    
+//    $scope.init = function () {
+//    // check if there is query in url
+//    // and fire search in case its value is not empty
+//       // alert('inside init');
+//    };
+
+//    $scope.setFilter = function(user) {
+//        return user.Tower === "Integration";
+//    };
+//    $scope.loading = false;
+//    //$scope.names = [{"EmpID":206378,"Name":"Suman Parua","Mobile":9830173016,"Skill":"SQL Server developer"},{"EmpID":211855,"Name":"Sharmistha Das","Mobile":13656156357,"Skill":".NET/SQL developer"},{"EmpID":212477,"Name":"Koushik Chakrabarti","Mobile":9830173016,"Skill":".NET architect, PMCD-E1"},{"EmpID":235765,"Name":"Arindam Jha","Mobile":9830173016,"Skill":".NET/SQL developer"},{"EmpID":242708,"Name":"Ayan Mukherjee","Mobile":126513039,"Skill":".NET/SQL designer"},{"EmpID":380904,"Name":"Manab Ranjan Basu","Mobile":9830173016,"Skill":".NET developer"},{"EmpID":512231,"Name":"Arindam Sanyal","Mobile":9830173016,"Skill":".NET architect"},{"EmpID":519884,"Name":"Arundhati Chakraborty","Mobile":9830173016,"Skill":".NET/SQL developer"},{"EmpID":875868,"Name":"Mainak Pan","Mobile":371565367,"Skill":".NET/SQL developer"},{"EmpID":881765,"Name":"Arnab De","Mobile":9830173016,"Skill":".NET/SQL developer"}]
+//}
+
+</script>
+</body>
+</html>

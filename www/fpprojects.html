@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FP projects</title>
+    <meta http-equiv="expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/headerfooter.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <style>
+#details {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#details td, #customers th {
+    font-size: 1em;
+    border: 1px solid #f5ac35;
+    padding: 1px 2px 1px 2px;
+}
+
+#details th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #A7C942;
+    color: #ffffff;
+}
+
+#details tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
+    </style> 
+</head>
+
+<body>
+
+<div data-role="page" id="FPProjects-Page">
+
+<div data-role="header" data-theme="b" data-position="fixed" style="padding-top: 20px;">
+      <a href="index.html" class="ui-btn-left" data-icon="home" data-iconpos="notext" 
+           data-direction="reverse">Home</a> 
+      <a href="about.html" class="ui-btn-right" data-icon="info" data-iconpos="notext" >About</a> 
+      <center><font size="2px">FP Projects</font> </center>
+</div><!-- /header -->
+
+<div data-role="content">
+<ul id="projectList" data-role="listview" data-inset="true" data-mini="true"></ul>
+</div>
+
+<div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+ 
+
+</div>
+    
+    
+    <!--second page -->
+<div data-role="page" id="FPDetails-page">
+    <div data-role="header" data-theme="b"><a href="#" data-rel="back" data-role="button" >Back</a>
+         <h6>Details</h6>
+    </div>
+    <div data-role="content">
+    </div>
+    
+    <div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+</div>    
+
+<script>
+
+    $(document).on("pagebeforeshow", "#FPProjects-Page", function() {
+                
+        var sugList = $("#projectList");
+        var loading = "<li><center><img src=\"img/loading.gif\" alt=\"Loading...\" ></center></li>";
+        sugList.html(loading);
+        sugList.listview("refresh");        
+
+//        $.get("https://api.myjson.com/bins/3y6ff", function(res,code) {
+//            var str = "";            
+//            for (var i = 0, len = res.length; i < len; i++) {
+//                str += "<li><a href=\"#\" id=\"" + res[i].ProjectName + "\" class=\"info-go\">" + res[i].ProjectName + "</a></li>";
+//            }
+//
+//            sugList.html(str);
+//            sugList.listview("refresh");
+//        }, "json");
+
+        $.get("project.json", function(res,code) {
+            var str = "";            
+            for (var i = 0, len = res.length; i < len; i++) {
+                str += "<li><a href=\"#\" id=\"" + res[i].ProjectName + "\" class=\"info-go\">" + res[i].ProjectName + "</a></li>";
+            }
+
+            sugList.html(str);
+            sugList.listview("refresh");
+        }, "json");
+
+
+
+        //add the click event for the redirection to happen to #details-page
+        $("#projectList").on("click", ".info-go", function(e) {
+            e.preventDefault();
+            //store the information in the next page's data
+            $("#FPDetails-page").data("info", this.id);
+            //change the page # to second page. 
+            //Now the URL in the address bar will read index.html#details-page
+            //where #details-page is the "id" of the second page
+            //we're gonna redirect to that now using changePage() method
+            $.mobile.changePage("#FPDetails-page", { transition: "fade", showLoadMsg: true });
+        });
+
+    });
+    
+//Details page events
+    
+    
+//$(document).on("pageinit", "#details-page", function () {    
+//     $.mobile.loading( 'show', {
+//	text: 'foo',
+//	textVisible: false,
+//	theme: 'a',
+//	html: "<img src=\"img/phone.png\" alt=\"Loading\">"
+//    });
+//});
+
+    $(document).on("pagebeforeshow", "#FPDetails-page", function() {
+    var loading = "<center><img src=\"img/loading.gif\" alt=\"Loading...\" ></center>";
+    $("#FPDetails-page").find("[data-role=content]").html(loading);       
+    
+    var keyword = $(this).data("info");
+    var info_view = "<table id=\"details\">";
+    var info = "";
+//       $.get("https://api.myjson.com/bins/3y6ff", { search: keyword }, function(res, code) {
+//                    for (var i = 0, len = res.length; i < len; i++) {
+//                        if (res[i].ProjectName == keyword) {
+//                            info = res[i];
+//                            break;
+//                        }
+//                    }
+        
+        $.get("project.json", { search: keyword }, function(res, code) {
+                    for (var i = 0, len = res.length; i < len; i++) {
+                        if (res[i].ProjectName == keyword) {
+                            info = res[i];
+                            break;
+                        }
+                    }
+        
+        //string to put HTML in    
+        //use for..in to iterate through object
+        for (var key in info) {            
+            info_view += '<tr><td><b>' + key + '</b></td><td>' + info[key] + '</td> </tr>';            
+        }   
+        info_view += "</table>";
+        $("#FPDetails-page").find("[data-role=content]").html(info_view);       
+        
+    }, "json");  
+   // $.mobile.loading( 'hide' );
+});
+        
+    
+//$(document).on("pagebeforehide","#page2",function(){
+//  //alert("pagebeforehide event fired - pagetwo is about to be hidden");
+//});
+//$(document).on("pagehide","#page2",function(){
+//  //alert("pagehide event fired - pagetwo is now hidden");
+//});
+//    
+//    $("#searchPage").on("pageshow", function(e) {
+//        //console.log("Ready to bring the awesome.");
+//    });
+
+//    function showDetails(obj)
+//    {    
+//        alert(obj.EmpID);
+//    }
+    
+//function getParams() {
+
+//    var params = {},
+//        pairs = document.URL.split('?')
+//               .pop()
+//               .split('&');
+
+//    for (var i = 0, p; i < pairs.length; i++) {
+//        p = pairs[i].split('=');
+//        params[p[0]] = p[1];
+//    }
+
+//    return params;
+//}
+</script>
+
+</body>
+</html>

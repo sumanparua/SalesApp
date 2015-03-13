@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {text-align:center;}
+p {text-align:center;}
+
+.box-set {
+  background: #eaeaed;
+}
+.radio {
+
+  float: right;
+  margin: 1.858736059%;
+  width: 29.615861214%;
+}
+
+.pie {
+
+  float: right;
+  margin: 1.858736059%;
+  width: 29.615861214%;
+}
+
+</style>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="themes/BandQ.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />	
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <!-- Include the jQuery library -->
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+	<link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />    
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxchart.core.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+	<!--script type="text/javascript" src="data/SalesbyBG.json></script>
+	<script type="text/javascript" src="data/SalesbyDivision.json></script>
+	<script type="text/javascript" src="data/SalesbyFormat.json></script>
+	<script type="text/javascript" src="data/SalesbyRegion.json></script-->	
+
+</head>
+<body>
+
+<div data-role="page" id="pageone" data-theme="a">
+  <div data-role="header" data-theme="a" >
+    <h1 text-align:center ><a href="#pageone" class="ui-icon-home ui-btn-icon-left "></a><img src="site-logo.png" style="width:40px;height:40px">
+	&nbsp&nbsp&nbsp&nbsp&nbspSales and Margin Reports<a href="#pagetwo" class="ui-icon-back ui-btn-icon-right ui-btn-inline"></a></h1>
+  </div>
+
+  <div data-role="main" class="ui-content" data-theme="a">
+  
+    <table align="center">
+	<tr><th>BQYEAR</th><th>
+	<select name="bqyear" id="bqyear">
+	<option selected>2015
+	<option>2014
+	<option>2013
+	<option>2012
+	</select>
+	</th><th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBQWEEK</th><th>
+	<script>
+	var var1 = "<select name='bqweek' id='bqweek'><option selected>1";
+	for (i=1;i<=52;i++)
+	{
+		var1 = var1 + "<option>"+i;
+	}
+	var1 = var1 + "</select>";
+	document.write(var1);
+	</script>
+	<!--input type="text" id="bqweek" placeholder="BQWEEK" size="5"-->
+	</th><th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+	<th>CATEGORY</th><th>
+	<select name="category" id="category">
+	<option selected>201 Heavyside Building
+	<option>201 Heavyside Building
+	<option>202 Lightside Building
+	<option>203 Kitchens & Bedrooms
+	<option>204 Bathrooms
+	<option>205 Flooring & Tiling
+	<option>206 Paint
+	<option>207 Home
+	<option>208 Garden
+	<option>209 Other
+	</select>
+	</th>
+	<th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+	<th><button class="ui-btn ui-corner-all ui-icon-search ui-btn-icon-left ui-default-state" onClick=RunReport()>Submit</button></th></tr>
+
+	</table>	
+
+    
+	<hr>    
+
+  <fieldset class ="radio" data-role="controlgroup" data-type="horizontal">
+      <input type="radio" name="radioreport" id="Division" value="Division">
+	  <label for="Division">Division</label>
+      <input type="radio" name="radioreport" id="Region" value="Region">
+      <label for="Region">Region</label>
+      <input type="radio" name="radioreport" id="StoreFormat" value="format2">	  
+	  <label for="StoreFormat">Store Format</label>
+  </fieldset>
+
+    
+	<div>
+	<div id='jqxChart' style="margin-top: 20px; width: 550px; height: 400px; position: relative; left: 0px; top: 0px;">
+	</div>
+	<div id='jqxPieChart' class="pie" style="margin-top: 20px; width: 400px; height: 400px; position: relative; right: 0px; top: 0px;"></div>
+	</div>
+  </div>
+  
+  <div data-role="footer" data-theme="a">
+    <h1>&nbsp;</h1>
+  </div>
+</div> 
+
+<div data-role="page" id="pagetwo" data-theme="a">
+     <h1 text-align:center><a href="#pageone" class="ui-icon-home ui-btn-icon-left"></a>Page 2<a href="#pageone" class="ui-icon-back ui-btn-icon-right"></a></h1>
+  </div>
+  <div data-role="main" class="ui-content">
+  </div>
+
+  <div data-role="footer" data-theme="a">
+    <h1>Insert Footer Text Here</h1>
+  </div>
+</div> 
+
+
+<div data-role="page" data-dialog="true" id="DialogWarning">
+  <div data-role="header">
+    <h1>Data Validation</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Please enter BQYEAR and BQWEEK to proceed.</p>
+    
+  </div>
+
+</div> 
+
+  <script>
+  var json2;
+  function myFunction(response) {
+    DisplayReport(response);
+	var arr = JSON.parse(response);
+    var i;
+    var out = "<table><tr><th>EMP ID</th><th>Name</th><th>Age</th><th>Status</th></tr>";
+
+    for(i = 0; i < arr.length; i++) {
+        out += "<tr><td>" 
+        arr[i].ID +
+        "</td><td>" +
+        arr[i].name +
+        "</td><td>" +
+        arr[i].age +
+        "</td><td>"+
+        arr[i].Status+
+        "</td></tr>";
+    }
+
+    out += "</table>"
+	//alert(out);
+    //document.getElementById("main1").innerHTML = out;
+}
+
+function loadXMLDoc(url)
+{
+var xmlhttp;
+var txt,xx,x,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	myFunction(xmlhttp.responseText)
+     }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+
+function LoadJSON(url)
+{
+var xmlhttp;
+var txt,xx,x,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	ShowPieChart(xmlhttp.responseText)
+     }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+
+
+function RunReport()
+{
+
+bqyear = Number(document.getElementById("bqyear").value);
+bqweek = Number(document.getElementById("bqweek").value);
+category =document.getElementById("category").value;
+
+if (bqyear==0 || bqweek==0 || category=="")
+{
+$.mobile.pageContainer.pagecontainer("change", "#DialogWarning", {
+    transition: "pop"
+});
+document.getElementById("jqxChart").style.visibility = "hidden";
+return;
+}
+
+
+var URL = 'https://api.mongolab.com/api/1/databases/kitsdata/collections/SalesbyBG?q={"BQYEAR":' + bqyear + ' ,"BQWEEK": ' +  bqweek +  ' ,"Category": "' + category + '"}&apiKey=CZH2sXEjrVLrn3CsulsxW4qICBfGC3wU'
+loadXMLDoc(URL);
+
+}
+
+function DisplayReport(JSONData)
+{
+document.getElementById("jqxChart").style.visibility = "visible";
+
+	var arr = JSON.parse(JSONData);
+	
+            // prepare jqxChart settings
+            var settings = {
+                title: "Weekly Sales Report",
+                description: category,
+                enableAnimations: true,
+                showLegend: true,
+                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+                titlePadding: { left: 0, top: 0, right: 0, bottom: 10 },
+                source: arr, //parsed JSON
+                xAxis:
+                    {
+						dataField: 'BuyGrpDesc',
+                        gridLines: { visible: true },
+						labels: {angle:-60}
+                    },
+                colorScheme: 'scheme01',
+                seriesGroups:
+                    [
+                        {
+                            type: 'column',
+                            columnsGapPercent: 20,
+                            seriesGapPercent: 0,
+                            valueAxis:
+                            {
+                                visible: true,
+                                unitInterval: 500000,
+                                minValue: 0,
+                                maxValue: 3000000,                                
+                                title: { text: 'Sales (£)' }
+                            },
+                            series: [
+                                    { dataField: 'sales', displayText: 'Sales' },
+                                    { dataField: 'Margin', displayText: 'Margin' }
+                            ]
+                        }
+                    ]
+            };
+
+            // setup the chart
+            $('#jqxChart').jqxChart(settings);
+			
+URL = 'https://api.mongolab.com/api/1/databases/kitsdata/collections/SalesbyFormat?q={"BQYEAR":' + bqyear + ' ,"BQWEEK": ' +  bqweek +  ' ,"Category": "' + category + '"}&apiKey=CZH2sXEjrVLrn3CsulsxW4qICBfGC3wU'
+
+LoadJSON(URL);
+
+
+}
+
+function ShowPieChart(jsonArray)
+{
+arr = JSON.parse(jsonArray);
+
+var settings2 = {
+                title: "Weekly Sales",
+                description: category,
+                enableAnimations: true,
+                showLegend: true,
+                showBorderLine: true,
+                legendPosition: { left: 50, top: 50, width: 100, height: 50 },
+                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+                titlePadding: { left: 0, top: 0, right: 0, bottom: 10 },
+                source: arr,
+                colorScheme: 'scheme03',
+                seriesGroups:
+                    [
+                        {
+                            type: 'pie',
+                            showLabels: false,
+                            series:
+                                [
+                                    { 
+                                        dataField: 'sales',
+                                        displayText: 'Format2',
+                                        labelRadius: 170,
+                                        initialAngle: 15,
+                                        radius: 120,
+                                        centerOffset: 0,
+                                        formatFunction: function (value) {
+                                            if (isNaN(value))
+                                                return value;
+                                            return parseFloat(value/1000.00).toFixed(2);
+                                        },
+                                    }
+                                ]
+                        }
+                    ]
+            };
+            // setup the chart
+            $('#jqxPieChart').jqxChart(settings2);
+
+
+
+}
+
+</script>
+</body>
+</html>

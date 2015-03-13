@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Teams</title>
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/headerfooter.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>    
+   <style>
+#details {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#details td, #customers th {
+    font-size: 1em;
+    border: 1px solid #f5ac35;
+    padding: 1px 1px 1px 1px;
+}
+
+#details th {
+    font-size: 1em;
+    text-align: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #A7C942;
+    color: #ffffff;
+}
+
+#details tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
+
+
+table, th , td  
+{
+  font-size: smaller;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 1px;
+}
+th
+{
+    background-color: #CCCCCC;    
+   }
+
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+    </style> 
+</head>
+
+<body>
+
+<div data-role="page" id="teamPage">
+
+    <div data-role="header" data-theme="b" data-position="fixed" style="padding-top: 20px;">
+          <a href="index.html" class="ui-btn-left" data-icon="home" data-iconpos="notext" 
+               data-direction="reverse">Home</a> 
+          <a href="about.html" class="ui-btn-right" data-icon="info" data-iconpos="notext" >About</a> 
+          <center>Project Teams</center>
+    </div><!-- /header -->
+
+    <div data-role="content">
+       <ul id="teamList" data-role="listview" data-mini="true"></ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+
+
+</div>
+
+    
+    <!--second page -->
+<div data-role="page" id="detailsPage" data-add-back-btn="true">
+  <div data-role="header" data-theme="b"><a href="#" data-rel="back" data-role="button" >Back</a>
+         <h6><font size="2px">Team Details</font></h6>
+    </div>
+    
+  <div data-role="content" class="ui-content">
+      <!--data-role="main"  if angular js is used-->
+    <!--<div ng-app="" ng-controller="customersController" data-ng-init="init()"> 
+    Search: (Type atleast 3 characters) <input ng-model="query">
+          Sort by:
+          <select ng-model="orderProp">
+            <option value="Name">Name</option>
+            <option value="EmpID">Employee ID</option>
+          </select>
+          <loading></loading>
+    <table >
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Mobile</th>        
+        <th>Call</th>
+        <th>SMS</th>
+    
+      <tr ng-repeat="x in names | filter:query | filter:setFilter | orderBy:orderProp" >         
+        <td> {{x.EmpID}} </td>
+        <td> {{x.Name}} </td>
+        <td>  {{x.Mobile}}</td>            
+        <td><center><a href="tel:+91{{x.Mobile}}"><img src="img/phone.png" alt="Call" height="16" width="16"></a></center></td>
+        <td><center><a href="sms:91{{x.Mobile}}"><img src="img/sms.png" alt="SMS" height="16" width="16"></a></center></td>
+      </tr>
+    </table>
+ 
+    </div>-->
+    <!--<div id="mode"></div>-->
+
+   </div>
+
+      
+    <div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+  </div>   
+    
+    
+<script>
+    
+    $(document).on("pagebeforeshow", "#teamPage", function () {
+        var sugList = $("#teamList");
+        var loading = "<li><center><img src=\"img/loading.gif\" alt=\"Loading...\" ></center></li>";
+        sugList.html(loading);
+        sugList.listview("refresh");        
+
+        //$.get("https://api.myjson.com/bins/qlxn", function (res, code) {
+            
+        $.get("fullmrt.json", function (res, code) {
+            var str = "";
+            var uniqueGroups = [];
+            $.each(res, function () {
+                var item = $.trim(this.Tower);
+                if (uniqueGroups.indexOf(item) < 0) {
+                    uniqueGroups.push(item);
+                };
+            });
+            //uniqueGroups.sort(function (x, y) { return x < y; });
+            uniqueGroups.sort();
+
+            $.each(uniqueGroups, function (index, item) {
+                str += '<li><a href="#" id="' + item.toString() + '" class="info-go">' + item.toString() + '</a></li>';
+               // str += '<li><a href="#ShowDetails/Agile" id="' + item.toString() + '" class="info-go">' + item.toString() + '</a></li>';
+
+            });
+            sugList.html(str);
+            sugList.listview("refresh");
+        }, "json");  
+       
+
+
+        //add the click event for the redirection to happen to #details-page
+        $("#teamList").on("click", ".info-go", function (e) {
+            e.preventDefault();
+            //store the information in the next page's data
+            $("#detailsPage").data("info", this.id);
+            //$("#mode").html(this.id);
+            //$("#mode").hide();
+            //change the page # to second page. 
+            //Now the URL in the address bar will read index.html#details-page
+            //where #details-page is the "id" of the second page
+            //we're gonna redirect to that now using changePage() method
+            $.mobile.changePage("#detailsPage", { transition: "fade", showLoadMsg: true });
+        });
+
+    });
+
+
+
+    $(document).on("pagebeforeshow", "#detailsPage", function () {
+        var loading = "<center><img src=\"img/loading.gif\" alt=\"Loading...\" ></center>";
+        $("#detailsPage").find("[data-role=content]").html(loading);
+
+        var keyword = $(this).data("info");        
+        var info_view = "<div><center>Team: &nbsp;" + keyword + "</center></div>";
+        info_view += "<table id=\"details\">";
+        info_view += "<th>EmpID</th><th>Name</th><th>Mobile</th><th>Call</th><th>SMS</th>";
+                
+        var info = [];
+         ///$.get("https://api.myjson.com/bins/qlxn", { search: keyword }, function (res, code) {
+            
+        $.get("fullmrt.json", { search: keyword }, function (res, code) {
+          
+            for (var i = 0, len = res.length; i < len; i++) {
+                if ($.trim(res[i].Tower) == keyword) {
+                    info.push(res[i]);                    
+                }
+            }
+
+            $.each(info, function (key, value) {
+                //alert(key + ":" + value.EmpID);
+                info_view += '<tr><td>' + value.EmpID + '</td><td>' + value.Name + '</td><td>' + value.Mobile + '</td>';
+                info_view += '<td><center><a href="tel:+91' + value.Mobile + '"><img src="img/phone.png" alt="Call" height="16" width="16"></a></center></td>';
+                info_view += '<td><center><a href="sms:91' + value.Mobile + '"><img src="img/sms.png" alt="SMS" height="16" width="16"></a></center></td>';
+                info_view += '</tr>';
+            });
+
+            info_view += "</table>";
+            //alert(info_view);
+            $("#detailsPage").find("[data-role=content]").html(info_view);
+
+        }, "json");       
+    });
+</script>
+    <script>
+
+        //angular.module('myApp', [])
+        //.directive('loading', function () {
+        //    return {
+        //        restrict: 'E',
+        //        replace: true,
+        //        template: '<div class="loading"><img src="img/loading.gif" />LOADING...</div>',
+        //        link: function (scope, element, attr) {
+        //            scope.$watch('loading', function (val) {
+        //                if (val)
+        //                    $(element).show();
+        //                else
+        //                    $(element).hide();
+        //            });
+        //        }
+        //    }
+        //})
+
+        //var sampleApp = angular.module('sampleApp', []);
+        //sampleApp.config(['$routeProvider',
+        //  function ($routeProvider) {
+        //      $routeProvider.
+        //        when('/ShowDetails/:teamID', {
+        //            templateUrl: 'angular.html',
+        //            controller: 'ShowTeamController'
+        //        });
+        //  }]);
+
+        //sampleApp.controller('ShowTeamController', function ($scope, $routeParams) {
+        //    $http.get("https://api.myjson.com/bins/qlxn")
+        // .success(function (response) { $scope.names = response; });
+
+        //    //$scope.order_id = $routeParams.orderId;
+        //    $scope.setFilter = function ($routeParams) {
+        //        return user.Tower === $routeParams.teamID;
+        //    };
+        //});
+
+        //function customersController($scope, $http) {
+        //    //$scope.loading = true;
+        //    $http.get("https://api.myjson.com/bins/qlxn")
+        //  .success(function (response) { $scope.names = response; });
+
+        //   // alert($routeParams);
+        //    //$scope.init = function () {
+        //    //    // check if there is query in url
+        //    //    // and fire search in case its value is not empty
+        //    //    // alert('inside init');
+        //    //    //alert($("#mode").html());
+        //    //};
+
+        //    $scope.setFilter = function (user) {
+        //        return user.Tower === "Agile";
+        //    };
+        //   // $scope.loading = false;
+        //    //$scope.names = [{"EmpID":206378,"Name":"Suman Parua","Mobile":9830173016,"Skill":"SQL Server developer"},{"EmpID":211855,"Name":"Sharmistha Das","Mobile":13656156357,"Skill":".NET/SQL developer"},{"EmpID":212477,"Name":"Koushik Chakrabarti","Mobile":9830173016,"Skill":".NET architect, PMCD-E1"},{"EmpID":235765,"Name":"Arindam Jha","Mobile":9830173016,"Skill":".NET/SQL developer"},{"EmpID":242708,"Name":"Ayan Mukherjee","Mobile":126513039,"Skill":".NET/SQL designer"},{"EmpID":380904,"Name":"Manab Ranjan Basu","Mobile":9830173016,"Skill":".NET developer"},{"EmpID":512231,"Name":"Arindam Sanyal","Mobile":9830173016,"Skill":".NET architect"},{"EmpID":519884,"Name":"Arundhati Chakraborty","Mobile":9830173016,"Skill":".NET/SQL developer"},{"EmpID":875868,"Name":"Mainak Pan","Mobile":371565367,"Skill":".NET/SQL developer"},{"EmpID":881765,"Name":"Arnab De","Mobile":9830173016,"Skill":".NET/SQL developer"}]
+        //}   
+
+
+</script>
+
+</body>
+</html>

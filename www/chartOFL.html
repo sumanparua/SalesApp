@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
+    <title>Chart - OFL</title>       
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/headerfooter.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />    
+    <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxchart.core.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxgrid.filter.js"></script>
+    <script type="text/javascript" src="jqwidgets/jqxcheckbox.js"></script>
+    
+</head>
+<body class='default'>    
+ <div data-role="page" id="page" data-add-back-btn="true">
+  
+ <div data-role="header" data-theme="b"><a href="#" data-rel="back" data-role="button" >Back</a>
+         <h6><font size="2px">Offshore Leverage</font></h6>
+    </div>
+    
+  <div role="main" class="ui-content">
+      <div id="jqxGrid"></div>
+      <br />
+	<div id='jqxChart' style="margin-top: 20px; width: 320px; height: 250px; position: relative; left: 0px; top: 0px;">
+    </div>
+      <br />
+     <div id='jqxChart2' style="margin-top: 20px; width: 320px; height: 250px; position: relative; left: 0px; top: 0px;">
+    </div>
+<div style='margin-top: 10px;'>
+                <input style='float: left;' id="jpegButton" type="button" value="Save As JPEG" />
+                <input style='float: left; margin-left: 5px;' id="pngButton" type="button" value="Save As PNG" />
+            </div>
+      
+  </div>
+
+ <div data-role="footer" data-position="fixed" data-theme="b">		
+    <center>Powered by <I>Agile Dev CCoE</I></center>
+</div><!-- /footer -->
+
+</div>
+ 
+    <script>
+        $(document).ready(function () {
+            
+            function getExportServer() {
+                return 'http://www.jqwidgets.com/export_server/export.php';
+            }
+            // prepare chart data as an array
+            var sampleData = [
+                    { Team: 'Agile', Onsite: 2, Offshore: 12, OFL: 83.33 },
+                    { Team: 'Integration', Onsite: 11, Offshore: 14, OFL: 56 },
+                    { Team: 'Darwin', Onsite: 45, Offshore: 120, OFL: 72.73 },                    
+                    { Team: 'AMS CE', Onsite: 28, Offshore: 45, OFL: 61.64 },
+                    { Team: 'AMS UK', Onsite: 15, Offshore: 65, OFL: 81.25 }
+                    
+            ];
+
+            // prepare jqxChart settings
+            var settings = {
+                title: "Onsite Offshore Distribution",
+                description: "Location-wise count of associates",
+                enableAnimations: true,
+                showLegend: true,
+                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+                titlePadding: { left: 20, top: 0, right: 0, bottom: 10 },
+                source: sampleData,
+                xAxis:
+                    {
+                        dataField: 'Team',
+                        gridLines: { visible: true }
+                    },
+                colorScheme: 'scheme01',
+                seriesGroups:
+                    [
+                        {
+                            type: 'column',
+                            columnsGapPercent: 50,
+                            seriesGapPercent: 0,
+                            valueAxis:
+                            {
+                                visible: true,
+                                unitInterval: 10,
+                                minValue: 0,
+                                maxValue: 120,                                
+                                title: { text: 'Count of associates' }
+                            },
+                            series: [
+                                    { dataField: 'Onsite', displayText: 'Onsite' },
+                                    { dataField: 'Offshore', displayText: 'Offshore' }
+//                                    { dataField: 'OFL', displayText: 'OFL' }
+                            ]
+                        }
+                    ]
+            };
+
+            // setup the chart
+            $('#jqxChart').jqxChart(settings);
+
+            
+            // prepare jqxChart settings
+            var settings2 = {
+                title: "Offshore Leverage",
+                description: "Percentage of associates at offshore",
+                enableAnimations: true,
+                showLegend: true,
+                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+                titlePadding: { left: 20, top: 0, right: 0, bottom: 10 },
+                source: sampleData,
+                xAxis:
+                    {
+                        dataField: 'Team',
+                        gridLines: { visible: true }
+                    },
+                colorScheme: 'scheme02',
+                seriesGroups:
+                    [
+                        {
+                            type: 'column',
+                            columnsGapPercent: 50,
+                            seriesGapPercent: 0,
+                            valueAxis:
+                            {
+                                visible: true,
+                                unitInterval: 10,
+                                minValue: 0,
+                                maxValue: 120,                                
+                                title: { text: 'OFL %' }
+                            },
+                            series: [
+//                                    { dataField: 'Onsite', displayText: 'Onsite' },
+//                                    { dataField: 'Offshore', displayText: 'Offshore' }
+                                    { dataField: 'OFL', 
+                                      displayText: 'OFL',
+                                      labels: {
+                                            visible: true,
+                                            verticalAlignment: 'top',
+                                            offset: { x: 0, y: -20 }
+                                      }
+                                    }
+                            ]
+                        }
+                    ]
+            };
+
+            // setup the chart
+            $('#jqxChart2').jqxChart(settings2);
+            
+             $("#jpegButton").jqxButton({
+      theme: 'energyblue'
+  });
+  $("#pngButton").jqxButton({
+      theme: 'energyblue'
+  });
+            $("#jpegButton").click(function () {
+                // call the export server to create a JPEG image
+                $('#jqxChart2').jqxChart('saveAsJPEG', 'myChart.jpeg', getExportServer());
+            });
+            $("#pngButton").click(function () {
+                // call the export server to create a PNG image
+                $('#jqxChart2').jqxChart('saveAsPNG', 'myChart.png', getExportServer());
+            });
+            
+            var adapter = new $.jqx.dataAdapter({
+                datafields: [
+                    { name: "Team", type: "string" },
+                    { name: "Onsite", type: "number" },
+                    { name: "Offshore", type: "number" },
+                    { name: "OFL", type: "number" }
+                ],
+                localdata: sampleData,
+                datatype: 'array'
+            });
+
+            $("#jqxGrid").jqxGrid({
+                width: 320,
+                height: 180,
+                filterable: true,
+                showfilterrow: true,
+                source: adapter,
+                columns:
+                [
+                    { text: "Team", width: '40%', datafield: "Team", filtertype: "checkedlist" },
+                    { text: "Onsite", width: '20%', datafield: "Onsite" },
+                    { text: "Offshore", width: '20%', datafield: "Offshore" },
+                    { text: "OFL", width: '20%', datafield: "OFL" }
+                ]
+            });
+            $("#jqxGrid").on('filter', function () {
+                var rows = $("#jqxGrid").jqxGrid('getrows');
+                var chart = $('#jqxChart').jqxChart('getInstance');
+                var chart2 = $('#jqxChart2').jqxChart('getInstance');
+                
+                chart.source = rows;
+                chart.update();
+                chart2.source = rows;
+                chart2.update();
+            });
+        });
+
+    </script>
+</body>
+</html>
